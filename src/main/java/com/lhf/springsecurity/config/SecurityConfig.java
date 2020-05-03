@@ -121,11 +121,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .failureHandler(new LoginFailureHandler())//添加自定义登录失败页面
                 .permitAll()
                 .and()
-                .rememberMe()
-                .tokenRepository(persistentTokenRepository())
-                .tokenValiditySeconds(30 * 24 * 60 * 60)
-//                .rememberMeCookieName("remember-me")
-//                .rememberMeParameter("remember-me")
+                .rememberMe()//开启记住我的功能
+                .tokenRepository(persistentTokenRepository())//添加功能实现方式，基于内存还是基于数据库
+                .tokenValiditySeconds(30 * 24 * 60 * 60)//记住我的失效时间，这里设置为30天
+//                .rememberMeCookieName("remember-me")//cookie的名称
+//                .rememberMeParameter("remember-me")//表单提交的名称
                 .and()
                 .exceptionHandling()
                 .accessDeniedHandler((request, response, e) -> {
