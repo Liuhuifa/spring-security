@@ -24,6 +24,7 @@ public class SysUserServiceImpl implements SysUserService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         SysUser user = sysUserDao.login(username);
+        System.out.println("username = " + username);
         if (user == null)
             throw new UsernameNotFoundException("用户未找到");
         return user;

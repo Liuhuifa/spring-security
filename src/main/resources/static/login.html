@@ -43,32 +43,26 @@
             margin-bottom: 24px;
         }
 
-        .remember-me {
-            font-size: 12px;
-        }
-
-        #form > div {
-            display: flex;
-            justify-content: space-between;
-        }
     </style>
 </head>
 <body>
 <div class="form">
     <div>
         <span>登录系统</span>
-        <form id="form">
-            <label>用户名:</label>
-            <input type="text"/>
-            <label>密&nbsp;&nbsp;&nbsp;码:</label>
-            <input type="password">
-            <div>
-                <input type="submit" class="submit" value="登录"/>
-                <div style="margin-top: 10px">
-                    <label class="remember-me">记住我</label>
-                    <input type="checkbox"/>
-                </div>
-            </div>
+        <form id="form" action="/login" method="post">
+            <label>
+                用户名:
+                <input name="username" type="text"/>
+            </label>
+            <label>
+                密&nbsp;&nbsp;&nbsp;码:
+                <input name="password" type="password">
+            </label>
+            <label>
+                记住我
+                <input name="remember-me" type="checkbox"/>
+            </label>
+            <input type="submit" class="submit" value="登录"/>
         </form>
     </div>
 </div>
